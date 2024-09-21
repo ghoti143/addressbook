@@ -1,4 +1,5 @@
 `docker build -t addressbook .`
+
 `docker-compose up -d`
 
 ```
