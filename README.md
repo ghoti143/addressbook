@@ -12,3 +12,6 @@ curl -w "\n" \
 ```
 
 `curl -w "\n" localhost:3000/persons/all`
+
+
+todo: turn into typescript+es6 https://benjamin-chavez.com/blog/creating-a-typescript-express.js-web-application-with-es6-step-by-step-guide
