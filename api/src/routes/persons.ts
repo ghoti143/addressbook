@@ -3,7 +3,7 @@ import { Person } from '../database';
 
 export const persons = Router();
 
-persons.get('/all', function (req, res) {
+persons.get('/', function (req, res) {
   Person.findAll()
     .then(persons => {
       res.status(200).send(JSON.stringify(persons));
