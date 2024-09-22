@@ -1,13 +1,11 @@
-# docker-compose.yml
-
-version: "3.9"
+version: '3.9'
 services:
   postgres:
     image: postgres:12-alpine
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-    ports: 
+    ports:
       - '5432:5432'
     volumes:
       - addressbook-db:/var/lib/postgresql/data
@@ -15,7 +13,6 @@ services:
   addressbook:
     build:
       context: .
-    # command: ["npm", "run", "migrate", "&&", "npm", "start"]
     environment:
       DB_SCHEMA: postgres
       DB_USER: postgres
@@ -25,6 +22,6 @@ services:
       - postgres
     ports:
       - '3000:3000'
-        
+
 volumes:
   addressbook-db:
