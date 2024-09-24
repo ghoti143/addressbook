@@ -1,9 +1,9 @@
 import { Router } from 'express';
 import { Person } from '../database';
 
-export const persons = Router();
+export const people = Router();
 
-persons.get('/', function (req, res) {
+people.get('/', function (req, res) {
   Person.findAll()
     .then(persons => {
       res.status(200).send(JSON.stringify(persons));
@@ -13,7 +13,7 @@ persons.get('/', function (req, res) {
     });
 });
 
-persons.get('/:id', function (req, res) {
+people.get('/:id', function (req, res) {
   Person.findByPk(req.params.id)
     .then(person => {
       res.status(200).send(JSON.stringify(person));
@@ -23,7 +23,7 @@ persons.get('/:id', function (req, res) {
     });
 });
 
-persons.put('/', function (req, res) {
+people.put('/', function (req, res) {
   Person.create({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -37,7 +37,7 @@ persons.put('/', function (req, res) {
     });
 });
 
-persons.delete('/:id', function (req, res) {
+people.delete('/:id', function (req, res) {
   Person.destroy({
     where: {
       id: req.params.id,
