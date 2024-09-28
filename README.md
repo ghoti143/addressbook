@@ -1,10 +1,33 @@
-h/t https://semaphoreci.com/community/tutorials/dockerizing-a-node-js-web-application
+# Boilerplace React + ExpressJS + Postgres
+
+* React
+* Recoil
+* ExpressJS
+* Sequelize
+* Postgres Docker container
+* Yarn workspaces monorepo
+
+## Clone repo
+
+`git clone https://github.com/ghoti143/boilerplate-react-express-pg.git`
+
+## Install dependencies
+
+`cd boilerplate-react-express-pg && yarn install`
+
+## Bring up database
 
 `docker-compose up -d`
 
+## Migrate tables
+
 `yarn run migrate`
 
+## Start dev
+
 `yarn start:dev`
+
+## Insert data
 
 ```
 curl -w "\n" \
@@ -13,6 +36,6 @@ curl -w "\n" \
        localhost:3000/people
 ```
 
-`curl -w "\n" localhost:3000/people`
-
-todo: turn into typescript+es6 https://benjamin-chavez.com/blog/creating-a-typescript-express.js-web-application-with-es6-step-by-step-guide
+credits:
+https://semaphoreci.com/community/tutorials/dockerizing-a-node-js-web-application
+https://benjamin-chavez.com/blog/creating-a-typescript-express.js-web-application-with-es6-step-by-step-guide
